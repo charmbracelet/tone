@@ -1,0 +1,32 @@
+# Charmtone
+
+The Charm™ color system.
+
+```go
+import "charm.land/tone"
+```
+
+## Whatcha think?
+
+We’d love to hear your thoughts on this project. Need help? We gotchu. You can
+find us on:
+
+- [Twitter][twitter]
+- [Discord][discord]
+- [Slack][slack]
+- [Bluesky][bsky]
+- [The Fediverse][mastodon]
+
+[twitter]: https://twitter.com/charmcli
+[slack]: https://charm.land/slack
+[discord]: https://charm.land/discord
+[bsky]: https://bsky.app/profile/charm.land
+[mastodon]: https://mastodon.social/@charmcli
+
+---
+
+Part of [Charm](https://charm.land).
+
+<a href="https://charm.land/"><img alt="The Charm logo" width="400" src="https://stuff.charm.sh/charm-banner-softy.jpg" /></a>
+
+Charm loves open source
