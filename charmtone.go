@@ -1,5 +1,5 @@
-// Package charmtone contains an API for the CharmTone color palette.
-package charmtone
+// Package tone contains an API for the CharmTone color palette.
+package tone
 
 import (
 	"fmt"

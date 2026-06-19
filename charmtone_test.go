@@ -1,4 +1,4 @@
-package charmtone
+package tone
 
 import (
 	"strconv"
