@@ -1,0 +1,20 @@
+name: lint
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    uses: charmbracelet/meta/.github/workflows/lint.yml@main
+    with:
+      golangci_version: v2.13.1
+      timeout: 10m
+
+  lint-cli:
+    uses: charmbracelet/meta/.github/workflows/lint.yml@main
+    with:
+      directory: cmd/charmtone
+      golangci_path: .golangci.yml
+      golangci_version: v2.13.1
+      timeout: 10m

@@ -1,0 +1,24 @@
+# Binaries
+/charmtone
+/cmd/charmtone/charmtone
+/dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+*.out
+
+# Go workspace files
+go.work
+go.work.sum
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
