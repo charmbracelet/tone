@@ -1,3 +1,5 @@
+<img width="800" alt="CharmTone Banner" src="https://github.com/user-attachments/assets/3f1db5b2-4dc0-45cd-b479-2b9c1b553af8" />
+
 # Charmtone
 
 The Charm™ color system.
