@@ -31,4 +31,4 @@ Part of [Charm](https://charm.land).
 
 <a href="https://charm.land/"><img alt="The Charm logo" width="400" src="https://stuff.charm.sh/charm-banner-softy.jpg" /></a>
 
-Charm loves open source
+Charm热爱开源 • Charm loves open source
