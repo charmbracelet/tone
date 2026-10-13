@@ -3,7 +3,7 @@
 The Charm™ color system.
 
 <p>
-  <img width="400" alt="CharmTone Banner" src="https://github.com/user-attachments/assets/3f1db5b2-4dc0-45cd-b479-2b9c1b553af8" /><br>
+  <img width="400" alt="CharmTone Banner" src="https://github.com/user-attachments/assets/c4ea8c9b-8bfc-4275-9aae-a059f458f535" /><br>
   <a href="https://github.com/charmbracelet/tone/releases"><img src="https://img.shields.io/github/release/charmbracelet/tone.svg" alt="Latest Release"></a>
   <a href="https://pkg.go.dev/charm.land/tone?tab=doc"><img src="https://godoc.org/charm.land/tone?status.svg" alt="GoDoc"></a>
   <a href="https://github.com/charmbracelet/tone/actions"><img src="https://github.com/charmbracelet/tone/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
