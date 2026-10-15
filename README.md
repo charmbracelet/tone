@@ -47,9 +47,6 @@ See the [docs](https://pkg.go.dev/charm.land/tone) for the full API.
 ```bash
 # Homebrew
 brew install charmbracelet/tap/charmtone
-
-# Go
-go install charm.land/tone/cmd/charmtone@latest
 ```
 
 Packages for Arch (AUR), Debian, Fedora, Alpine, Nix, Scoop and Winget, plus
