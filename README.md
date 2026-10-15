@@ -9,9 +9,64 @@ The Charm™ color system.
   <a href="https://github.com/charmbracelet/tone/actions"><img src="https://github.com/charmbracelet/tone/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
 
-```go
-import "charm.land/tone"
+CharmTone is the color palette behind Charm’s tools. This repo has a Go
+library for using it in your code and a CLI for exporting it.
+
+## Library
+
+```bash
+go get charm.land/tone
 ```
+
+Every color is a `tone.Key`, which satisfies `color.Color`, so you can hand it
+straight to [Lip Gloss](https://github.com/charmbracelet/lipgloss) or anything else that takes a color.
+
+```go
+import (
+	"fmt"
+
+	"charm.land/lipgloss/v2"
+	"charm.land/tone"
+)
+
+style := lipgloss.NewStyle().
+	Foreground(tone.Sash).
+	Background(tone.Charple)
+
+fmt.Println(tone.Charple, tone.Charple.Hex()) // Charple #6B50FF
+
+for _, k := range tone.Spectrum() {
+	fmt.Println(k, k.Hex())
+}
+```
+
+See the [docs](https://pkg.go.dev/charm.land/tone) for the full API.
+
+## CLI
+
+```bash
+# Homebrew
+brew install charmbracelet/tap/charmtone
+
+# Go
+go install charm.land/tone/cmd/charmtone@latest
+```
+
+Packages for Arch (AUR), Debian, Fedora, Alpine, Nix, Scoop and Winget, plus
+prebuilt binaries, are on the [releases][releases] page.
+
+```bash
+charmtone        # render the palette in your terminal
+charmtone css    # CSS custom properties
+charmtone scss   # SCSS variables
+charmtone vim    # Vim variables
+```
+
+[releases]: https://github.com/charmbracelet/tone/releases
+
+## License
+
+[Apache 2.0](LICENSE). See [NOTICE](NOTICE).
 
 ## Whatcha think?
 

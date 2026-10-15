@@ -15,7 +15,7 @@ includes:
 
 metadata:
   mod_timestamp: "{{ .CommitTimestamp }}"
-  license: "MIT"
+  license: "Apache-2.0"
   homepage: "{{ .Var.homepage }}"
   description: "{{ .Var.description }}"
   maintainers:
@@ -69,6 +69,7 @@ archives:
     files:
       - README*
       - LICENSE*
+      - NOTICE*
 
 nfpms:
   - vendor: charmbracelet
