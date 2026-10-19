@@ -9,8 +9,7 @@ The Charm™ color system.
   <a href="https://github.com/charmbracelet/tone/actions"><img src="https://github.com/charmbracelet/tone/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
 
-CharmTone is the color palette behind Charm’s tools. This repo has a Go
-library for using it in your code and a CLI for exporting it.
+Charmtone is the Charm color system.
 
 ## Library
 
