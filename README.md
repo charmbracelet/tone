@@ -3,13 +3,11 @@
 The Charm™ color system.
 
 <p>
-  <img width="400" alt="CharmTone Banner" src="https://github.com/user-attachments/assets/c4ea8c9b-8bfc-4275-9aae-a059f458f535" /><br>
+  <img width="600" alt="CharmTone Banner" src="https://github.com/user-attachments/assets/4d130ee9-6a7a-4d3b-bf90-e85be670d2fd" /><br>
   <a href="https://github.com/charmbracelet/tone/releases"><img src="https://img.shields.io/github/release/charmbracelet/tone.svg" alt="Latest Release"></a>
   <a href="https://pkg.go.dev/charm.land/tone?tab=doc"><img src="https://godoc.org/charm.land/tone?status.svg" alt="GoDoc"></a>
   <a href="https://github.com/charmbracelet/tone/actions"><img src="https://github.com/charmbracelet/tone/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
-
-Charmtone is the Charm color system.
 
 ## Library
 
