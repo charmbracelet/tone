@@ -1,12 +1,10 @@
 module charm.land/tone/cmd/charmtone
 
-replace charm.land/tone => ../../
-
 go 1.26.4
 
 require (
 	charm.land/lipgloss/v2 v2.0.4
-	charm.land/tone v0.0.0-00010101000000-000000000000
+	charm.land/tone v0.1.0
 	github.com/charmbracelet/fang v1.0.0
 	github.com/spf13/cobra v1.10.2
 )
