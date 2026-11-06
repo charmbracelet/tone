@@ -104,6 +104,13 @@ const (
 
 	// Ice is a secondary color that lives outside the main spectrum.
 	Ice
+
+	// Pinxy is a secondary pink that lives outside the main spectrum.
+	Pinxy
+
+	// Minty is a secondary color that lives outside the main spectrum, a
+	// mix of Julep and Ice.
+	Minty
 )
 
 // RGBA returns the red, green, blue, and alpha values of the color. It
@@ -196,7 +203,9 @@ var names = map[Key]string{
 	Toast: "Toast",
 
 	// Secondary, outside the spectrum.
-	Ice: "Ice",
+	Ice:   "Ice",
+	Pinxy: "Pinxy",
+	Minty: "Minty",
 }
 
 // String returns the official CharmTone name of the color. It satisfies the
@@ -289,7 +298,9 @@ var colors = map[Key]color.RGBA{
 	Toast: {R: 0x41, G: 0x21, B: 0x30, A: 0xFF}, // "#412130"
 
 	// Secondary, outside the spectrum.
-	Ice: {R: 0x00, G: 0xFF, B: 0xFC, A: 0xFF}, // "#00FFFC"
+	Ice:   {R: 0x00, G: 0xFF, B: 0xFC, A: 0xFF}, // "#00FFFC"
+	Pinxy: {R: 0xFF, G: 0x73, B: 0xFF, A: 0xFF}, // "#FF73FF"
+	Minty: {R: 0x00, G: 0xFF, B: 0xD7, A: 0xFF}, // "#00FFD7"
 }
 
 // Hex returns the hex value of the color.
@@ -306,7 +317,7 @@ func (k Key) Hex() string {
 // out-of-spectrum secondaries.
 func Keys() []Key {
 	keys := make([]Key, 0, len(colors))
-	for k := Cumin; k <= Ice; k++ {
+	for k := Cumin; k <= Minty; k++ {
 		keys = append(keys, k)
 	}
 	return keys
@@ -422,10 +433,12 @@ func (k Key) IsSecondary() bool {
 		Uni,
 		Coral,
 		Tuna,
+		Pinxy,
 		Violet,
 		Malibu,
 		Turtle,
 		Ice,
+		Minty,
 	}, k)
 }
 
