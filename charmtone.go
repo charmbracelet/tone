@@ -111,6 +111,21 @@ const (
 	// Minty is a secondary color that lives outside the main spectrum, a
 	// mix of Julep and Ice.
 	Minty
+
+	// Spectrum: earthy shades that open the main spectrum. They are
+	// appended here so existing keys keep their numbers; Spectrum() lists
+	// them first.
+	Tahini
+	Tandoor
+	Bisque
+
+	// Diffs: lighter addition tints.
+	Mojito
+	Dew
+
+	// Diffs: lighter deletion tints.
+	Guava
+	Sakura
 )
 
 // RGBA returns the red, green, blue, and alpha values of the color. It
@@ -206,6 +221,17 @@ var names = map[Key]string{
 	Ice:   "Ice",
 	Pinxy: "Pinxy",
 	Minty: "Minty",
+
+	// Spectrum, appended.
+	Tahini:  "Tahini",
+	Tandoor: "Tandoor",
+	Bisque:  "Bisque",
+
+	// Diffs, appended.
+	Mojito: "Mojito",
+	Dew:    "Dew",
+	Guava:  "Guava",
+	Sakura: "Sakura",
 }
 
 // String returns the official CharmTone name of the color. It satisfies the
@@ -281,7 +307,7 @@ var colors = map[Key]color.RGBA{
 	Steep:  {R: 0xD6, G: 0xD3, B: 0xDC, A: 0xFF}, // "#D6D3DC"
 	Sash:   {R: 0xEC, G: 0xEB, B: 0xF0, A: 0xFF}, // "#ECEBF0"
 	Salt:   {R: 0xF7, G: 0xF6, B: 0xFB, A: 0xFF}, // "#F7F6FB"
-	Soda:   {R: 0xFB, G: 0xFB, B: 0xFB, A: 0xFF}, // "#FBFBFB"
+	Soda:   {R: 0xF1, G: 0xF0, B: 0xF5, A: 0xFF}, // "#F1F0F5"
 
 	// Charples.
 	Darple: {R: 0x5B, G: 0x40, B: 0xEC, A: 0xFF}, // "#5B40EC"
@@ -301,6 +327,17 @@ var colors = map[Key]color.RGBA{
 	Ice:   {R: 0x00, G: 0xFF, B: 0xFC, A: 0xFF}, // "#00FFFC"
 	Pinxy: {R: 0xFF, G: 0x73, B: 0xFF, A: 0xFF}, // "#FF73FF"
 	Minty: {R: 0x00, G: 0xFF, B: 0xD7, A: 0xFF}, // "#00FFD7"
+
+	// Spectrum, appended.
+	Tahini:  {R: 0xA6, G: 0x7F, B: 0x6C, A: 0xFF}, // "#A67F6C"
+	Tandoor: {R: 0xD9, G: 0x82, B: 0x5E, A: 0xFF}, // "#D9825E"
+	Bisque:  {R: 0xD9, G: 0x9A, B: 0x86, A: 0xFF}, // "#D99A86"
+
+	// Diffs, appended.
+	Mojito: {R: 0x4E, G: 0xBE, B: 0xA0, A: 0xFF}, // "#4EBEA0"
+	Dew:    {R: 0xA8, G: 0xDC, B: 0xD0, A: 0xFF}, // "#A8DCD0"
+	Guava:  {R: 0xC3, G: 0x67, B: 0x89, A: 0xFF}, // "#C36789"
+	Sakura: {R: 0xDF, G: 0xB3, B: 0xC6, A: 0xFF}, // "#DFB3C6"
 }
 
 // Hex returns the hex value of the color.
@@ -313,21 +350,23 @@ func (k Key) Hex() string {
 }
 
 // Keys returns a slice of all CharmTone color keys, in iota order: the main
-// spectrum, Butter, then neutrals, charples, additions, deletions, and
-// out-of-spectrum secondaries.
+// spectrum, Butter, then neutrals, charples, additions, deletions,
+// out-of-spectrum secondaries, and colors added later (Tahini, Tandoor,
+// Bisque, Mojito, Dew, Guava, Sakura).
 func Keys() []Key {
 	keys := make([]Key, 0, len(colors))
-	for k := Cumin; k <= Minty; k++ {
+	for k := Cumin; k <= Sakura; k++ {
 		keys = append(keys, k)
 	}
 	return keys
 }
 
-// Spectrum returns the main CharmTone palette, from Cumin through Zest.
-// Butter, neutrals, and meta-group colors (charples, additions, deletions)
-// are not included.
+// Spectrum returns the main CharmTone palette, in rows of three: Tahini,
+// Tandoor and Bisque first, then Cumin through Zest. Butter, neutrals, and
+// meta-group colors (charples, additions, deletions) are not included.
 func Spectrum() []Key {
-	keys := make([]Key, 0, int(Zest-Cumin)+1)
+	keys := make([]Key, 0, int(Zest-Cumin)+4)
+	keys = append(keys, Tahini, Tandoor, Bisque)
 	for k := Cumin; k <= Zest; k++ {
 		keys = append(keys, k)
 	}
@@ -365,32 +404,39 @@ func Charples() []Key {
 	}
 }
 
-// Additions returns the colors used to indicate diff additions, from darkest
-// to brightest. The brightest, Julep, is also part of the main spectrum.
+// Additions returns the colors used to indicate diff additions: from darkest
+// to brightest (Julep, which is also part of the main spectrum), followed by
+// the lighter tints Mojito and Dew.
 func Additions() []Key {
 	return []Key{
 		Spinach,
 		Gator,
 		Pickle,
 		Julep,
+		Mojito,
+		Dew,
 	}
 }
 
-// Deletions returns the colors used to indicate diff deletions, from darkest
-// to brightest. The brightest, Cherry, is also part of the main spectrum.
+// Deletions returns the colors used to indicate diff deletions: from darkest
+// to brightest (Cherry, which is also part of the main spectrum), followed by
+// the lighter tints Guava and Sakura.
 func Deletions() []Key {
 	return []Key{
 		Toast,
 		Steak,
 		Pom,
 		Cherry,
+		Guava,
+		Sakura,
 	}
 }
 
 // IsSpectrum reports whether k is part of the main spectrum palette
-// (Cumin through Zest). Butter is intentionally excluded.
+// (Tahini, Tandoor, Bisque, and Cumin through Zest). Butter is intentionally
+// excluded.
 func (k Key) IsSpectrum() bool {
-	return k >= Cumin && k <= Zest
+	return (k >= Cumin && k <= Zest) || (k >= Tahini && k <= Bisque)
 }
 
 // IsNeutral reports whether k is one of the neutral colors.
