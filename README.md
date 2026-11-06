@@ -9,6 +9,10 @@ The Charm™ color system.
   <a href="https://github.com/charmbracelet/tone/actions"><img src="https://github.com/charmbracelet/tone/actions/workflows/build.yml/badge.svg?branch=main" alt="Build Status"></a>
 </p>
 
+<p>
+  <img width="800" alt="The CharmTone palette: 79 colors, with brand primary, secondary, charples, neutrals, additions and deletions" src="assets/charmtone-guide.png" />
+</p>
+
 ## Library
 
 ```bash
