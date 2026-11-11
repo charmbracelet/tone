@@ -1,0 +1,9 @@
+version: "3"
+
+tasks:
+  ase:
+    cmds:
+      - python3 scripts/ase.py
+  ase:check:
+    cmds:
+      - python3 scripts/ase.py --check
