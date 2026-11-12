@@ -30,3 +30,21 @@ jobs:
       macos_notary_issuer_id: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
       macos_notary_key_id: ${{ secrets.MACOS_NOTARY_KEY_ID }}
       macos_notary_key: ${{ secrets.MACOS_NOTARY_KEY }}
+
+  # The shared releaser image does not install Python, so build the swatch
+  # on the GitHub Ubuntu runner and attach it once the release exists.
+  ase:
+    needs: goreleaser
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: generate charmtone ase
+        run: python3 scripts/ase.py --version "${{ github.ref_name }}"
+      - name: attach charmtone ase
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "${{ github.ref_name }}" "charmtone-${{ github.ref_name }}.ase" --clobber

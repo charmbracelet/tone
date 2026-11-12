@@ -34,3 +34,6 @@ jobs:
         working-directory: cmd/charmtone
       - run: go test -race -failfast ./...
         working-directory: cmd/charmtone
+      - name: check charmtone ase
+        if: runner.os == 'Linux'
+        run: python3 scripts/ase.py --check

@@ -1,6 +1,9 @@
 # Binaries
 /charmtone
 /cmd/charmtone/charmtone
+
+# Generated palette swatch
+/charmtone*.ase
 /dist/
 *.exe
 *.exe~

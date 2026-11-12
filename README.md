@@ -51,7 +51,8 @@ brew install charmbracelet/tap/charmtone
 ```
 
 Packages for Arch (AUR), Debian, Fedora, Alpine, Nix, Scoop and Winget, plus
-prebuilt binaries, are on the [releases][releases] page.
+prebuilt binaries, are on the [releases][releases] page. Each release also
+includes `charmtone-vX.Y.Z.ase`, an Adobe Swatch Exchange file of the palette.
 
 ```bash
 charmtone        # render the palette in your terminal
